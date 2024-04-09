@@ -15,25 +15,63 @@ body img{
 
 /* PERSONALIZANDO ELEMENTOS DO CORPO DO ARQUIVO */
 body h1, h2, h3, p{
-    color: #fff;
+    color: darkcyan;
 }
 
 /* ESTILIZANDO O CABECALHO */
 header li {
-    display:inline; 
+    display:inline;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* EXTILIZANDO CAIXA */
-.cotainer{
-    width: 1366px;
+/* ESTILIZANDO CAIXA */
+.container{
     margin: 0 auto;
+    width: 1366px;
+    
+}
+.cabeca{
+    margin: 0 auto;
+    width: 1366px;
+    
 }
 
 /* ESTILIZANDO OS MEUS ARTICLE */
-.artigo{
-    background-color: red;
-    display: flex;
+
+
+.artigo1{
+    
+    /* background-color: red; */
+    justify-content: space-between;
     flex-wrap: wrap;
+    display: flex;
     width: 100%;
     flex: 1;
 }
+.artigo2{
+    /* background-color: pink; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+.artigo3{
+    /* background-color: orangered; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+.artigo4{
+    /* background-color: #1c1c1c; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+/* ESTILIZANDO ELEMENTOS DE CONTAINER */
