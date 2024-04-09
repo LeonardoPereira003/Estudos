@@ -1,0 +1,35 @@
+/* INICIO DO CSS COM O RESET */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* PERSONALIZANDO O CORPO DO ARQUIVO */
+body{
+    background: linear-gradient(#000,#9400d3 );
+}
+body img{
+    width: 350px;
+}
+
+/* PERSONALIZANDO ELEMENTOS DO CORPO DO ARQUIVO */
+body h1, h2, h3, p{
+    color: #fff;
+}
+
+/* ESTILIZANDO O CABECALHO */
+header li {
+    display:inline; 
+}
+
+/* EXTILIZANDO CAIXA */
+.cotainer{
+    width: 1366px;
+    margin: 0 auto;
+}
+
+/* ESTILIZANDO OS MEUS ARTICLE */
+.artigo{
+    display:flex;
+}
