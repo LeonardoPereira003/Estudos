@@ -31,5 +31,9 @@ header li {
 
 /* ESTILIZANDO OS MEUS ARTICLE */
 .artigo{
-    display:flex;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 1;
 }
