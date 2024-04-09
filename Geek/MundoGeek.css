@@ -9,8 +9,14 @@
 body{
     background: linear-gradient(#000,#9400d3 );
 }
+
+/* MEXENDO COM AS IMAGENS */
 body img{
     width: 350px;
+}
+
+#Mario{
+    height: 500px;
 }
 
 /* PERSONALIZANDO ELEMENTOS DO CORPO DO ARQUIVO */
