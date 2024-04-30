@@ -1,0 +1,70 @@
+body {
+    background-color: gray;
+}
+body h1, h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    
+}
+
+
+form{
+    margin-top: 50px;
+    
+}
+
+/* ELEMESNTOS DO FORMULARIO */
+
+input, button, textarea, p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    margin-bottom: 8px;
+    max-width: 300px;
+    width: 100%;
+    padding: 8px;
+    resize: none;
+    margin-left: 639px;
+    text-align: center;
+    outline: none;
+}
+
+button{
+    background-color:#008000;
+    color: #f5f5f5;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    max-width: 319px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color:#006400;
+    transform: scaleY(110%);
+}
+
+
+.success-mensage{
+    display: block;
+    background-color:#006400;
+    padding: 16px;
+    color:#f5f5f5;
+    display:none;
+    max-width: 289px;
+    width: 100%;
+    margin-left: 639px;
+}
+.erro{
+    padding: 8px;
+    background-color: #ff000f;
+    color: #f5f5f5;
+    margin-bottom: 8px;
+    display: none;
+    border-radius: 8px;
+    outline-color:#ff000f;
+}
+
+.container{
+    text-align: center;
+}
