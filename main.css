@@ -1,47 +1,44 @@
 *{
     margin: 0;
-    box-sizing: border-box;         /* RESET */
+    box-sizing: border-box;         
     padding: 0;
 }
 
 body{
-    background-color: rgba(0, 0, 0, 0.8);    /* CORPO DO DOCUMENTO */
-    color: rgba(6, 88, 126, 0.925);
+    background-color: rgba(0, 0, 0, 0.8);    
+    color: #fff;
 }
 
 
 header{
     display: flex;
-    justify-content: center;       /* Cabeçalho style */
+    justify-content: center;       
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(153, 132, 132, 0.8);
     border-bottom: 10px solid rgba(0, 0, 0,1);
+    text-transform: uppercase;
+    font-style: italic;
     
 }
 header img{
     margin: 4px;;
-    height: 30px;                 /* cabeçalho imagem */
+    height: 30px;                 
     cursor: pointer;
 }
 
 form{
-    width: 100%;
-    justify-content: center;         /* Formulario style */
-    display: flex;
-    padding: 10px;
-    margin-left: 550px;
-    margin-top: 10px;
-    background-color: rgba(134, 10, 10, 0.83);
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(153, 102, 102, 0.83);
     border: 3px solid rgba(0, 0, 0, 0.8);
     border-radius: 6px;
-    max-width: 400px;
-
+    display: none;
 
 }
 form input{
     margin: 2px;
     color: black;
-    text-align: center;              /* Formulario input style */
+    text-align: center;              
     align-items: center;
     background-color:darkgrey;
 }
@@ -49,37 +46,85 @@ form  button{
     padding: 5px;
     margin: 2px;
     color: black;
-    text-align: center;              /* Formulario input style */
+    text-align: center;              
     align-items: center;
     background-color:darkgrey;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+form  button:hover{
+    padding: 5px;
+    margin: 2px;
+    color: #ffff;
+    text-align: center;              
+    align-items: center;
+    background-color:#009432;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#cancel{
+    padding: 5px;
+    margin: 2px;
+    color: black;
+    text-align: center;              
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+#cancel:hover{
+    padding: 5px;
+    margin: 2px;
+    color: #ffff;
+    text-align: center;              
+    align-items: center;
+    text-transform: uppercase;
+    background-color: #ff000f;
     cursor: pointer;
 }
 
 
+
 .Conteudo{
-    margin-left: 220px;
+
     height: 100%;
     padding: 10px;
+
 }
 .Conteudo ul{
-    max-width: 1000px;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    
+    position: relative;
 }
 
 .Conteudo li{
-    margin: 20px;
-    text-align: center;
-    max-width: 200px;
-    width: 100%;
-    height: 150px;
+    max-width: 25%;
+    overflow-y:hidden;
     list-style: none;
-    
 }
+
+
 .Conteudo  img{
-max-width: 100px;
+max-width: 100%;
+width: 100%;
 }
+
+.link{
+    text-align: center;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 4px;
+    max-width: 25%; 
+    width: 100%;
+    opacity: 0;
+    transition: all ease .5s;
+} 
+.link:hover{
+    opacity: 1;
+} 
+.link a{
+    color: #fff;
+    text-decoration: none;
+}
+
