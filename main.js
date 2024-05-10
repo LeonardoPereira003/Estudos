@@ -1,4 +1,5 @@
 
+const meuElemento = document.getElementById('#tarefa')
 
 $('header img').click(function(){
     $('form').slideDown()
@@ -7,19 +8,24 @@ $('header img').click(function(){
 $('#cancel').click(function(){
     $('form').slideUp();
 })
+
+
 $('form').on('submit', function(e){
     e.preventDefault();
-    const enrderecoNovaImagem = $('#endereço-imagem-nova').val()
+    const enrderecoNovaTarefa = $('#endereço-terefa-nova').val()
     const novoItem = $('<li></li>')
-    $(`<img src="${enrderecoNovaImagem}" />`).appendTo(novoItem)
+    $(`<p>${enrderecoNovaTarefa} </p>`).appendTo(novoItem)
     $(
-        `<div class="link" />
-            <a href="${enrderecoNovaImagem}" target=_"blank" title="Ver imagem em tela cheia">
-                Ver imagem em tela cheia
-            </a>
+        `<div class="link" 
+            <p>
+                Finalizar Tarefa
+            </p>
         </div>    
     `).appendTo(novoItem)
 
     $(novoItem).appendTo('ul')
     console.log(novoItem)
+
+    meuElemento.style.textDecoration = "line-through"
+
 })
