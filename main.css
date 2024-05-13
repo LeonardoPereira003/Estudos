@@ -86,14 +86,15 @@ form  button:hover{
 
 
 .Conteudo{
-
+    margin-top: 40px;
+    margin-left: 760px;
     height: 100%;
     padding: 10px;
+    cursor: pointer;
 
 }
+
 .Conteudo ul{
-    display: flex;
-    flex-wrap: wrap;
     position: relative;
 }
 
@@ -112,7 +113,7 @@ width: 100%;
 .link{
     text-align: center;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.7); */
     position: absolute;
     bottom: 4px;
     max-width: 25%; 
