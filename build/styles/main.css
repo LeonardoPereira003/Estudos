@@ -14,7 +14,7 @@ body {
   color: #ffffffb9;
   height: 100vh;
   font-family: "Roboto", sans-serif;
-  margin-top: 200px;
+  margin-top: 0;
   overflow: hidden;
 }
 .header {
@@ -24,7 +24,7 @@ body {
 .bio {
   color: #ffffff98;
   text-align: center;
-  width: 1000px;
+  width: 100%;
   margin-top: 15px;
 }
 .branding {
@@ -124,7 +124,8 @@ a {
 }
 @media (max-width: 767px) {
   .container {
-    max-width: 70%;
+    max-width: 100%;
+    padding: 10px;
   }
 }
 @media ( min-width: 768px) and (max-width: 1023px) {
