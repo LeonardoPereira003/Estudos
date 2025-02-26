@@ -33,6 +33,10 @@ module.exports = function(grunt){
                         {
                             match: 'ENDERECO_ DO_CSS',
                             replacement: './styles/main.css'
+                        },
+                        {
+                            match: 'ENDERECO_ DO_JS',
+                            replacement: './src/scripts/main.js'
                         }
                     ]
                 },

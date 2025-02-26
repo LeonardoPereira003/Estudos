@@ -12,14 +12,18 @@
 <body>
     <main>
         <h1>Sorteador</h1>
-        <form>
+        <form id="Form-soteio">
             <div>
                 <label for="numero-maximo">Número Maximo</label>
-                <input type="number"  id="numero-maximo">
+                <input type="number"  id="numero-maximo" required min="2" value="2" step="1">
             </div>
             <button type="submit">Sortear Número</button>
         </form>
     </main>
-    <!-- teste -->
+    <div class="resultado">
+        O número sorteado foi:<span id="resultado"></span>
+    </div>
+
+
 </body>
 </html>
