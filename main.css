@@ -1,89 +1,114 @@
-/* Reset básico */
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Bloco principal */
-.produtos {
-    max-width: 640px;
-    width: 100%;
-    margin: 56px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1%;
-}
-
-/* Elemento: Cada produto */
-.produtos__item {
+/* Estilização Geral */
+body {
+    background-color: #0e0e10;
+    color: #fff;
     text-align: center;
-    background: #fff;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Elemento: Imagem do produto */
-.produtos__imagem {
-    width: 100%;
-    max-width: 150px;
-    border-radius: 8px;
+/* Hero Section */
+.hero {
+    background: url('https://wallpapers.com/images/featured/miles-morales-8qzqe2pjnl7sc8lo.jpg') no-repeat center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Elemento: Nome do produto */
-.produtos__nome {
+.hero-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+}
+
+.hero p {
     font-size: 1.2em;
-    margin: 8px 0;
+    margin-bottom: 20px;
 }
 
-/* Elemento: Descrição */
-.produtos__descricao {
-    color: gray;
-    font-size: 0.9em;
+/* Botão CTA */
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
 }
 
-/* Modificador: Produto em destaque */
-.produtos__item--destaque {
-    border: 2px solid gold;
-    background-color: #ffff42;
+.cta-button:hover {
+    background-color: #cc0000;
 }
 
-
-
-
-/* * {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+/* Seção Sobre */
+.about {
+    padding: 50px 20px;
+    background: #222;
 }
 
-.produtos {
-    max-width: 640px;
-    width: 100%;
-    margin: 56px auto;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-column-gap: 1%;
+.about h2 {
+    font-size: 2em;
+    color: #ff4d4d;
 }
 
-.produto {} /* bloco 
-
-.produto-imagem { /* elemento 
-    width: 100%;
+/* Galeria */
+.gallery {
+    padding: 50px 20px;
 }
 
-.produto-nome { /* elemento 
-    font-size: 1.2em;
-    margin: 8px 0;
+.gallery h2 {
+    font-size: 2em;
+    color: #ff4d4d;
 }
 
-.produto-descricao { /* elemento 
-    color: gray;
+.gallery-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.em-destaque { /* modificador 
-    border: 2px solid gold;
-    padding: 8px;
-    background-color: #ffff42;
-} */
+.gallery img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* Rodapé */
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: #9147ff;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .gallery-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery img {
+        width: 90%;
+    }
+}
