@@ -36,7 +36,7 @@ module.exports = function(grunt){
                         },
                         {
                             match: 'ENDERECO_ DO_JS',
-                            replacement: './src/scripts/main.js'
+                            replacement: '../src/scripts/main.js'
                         }
                     ]
                 },
@@ -91,5 +91,5 @@ module.exports = function(grunt){
 
 
     grunt.registerTask('default',['watch']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean']);
+    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dev', 'clean']);
 }
