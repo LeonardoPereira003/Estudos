@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-mail de confirmação de venda">
+    <title>Confirmação de Compra</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h2 {
+            color: #333;
+        }
+        .content p {
+            color: #555;
+            font-size: 16px;
+        }
+        .order-summary {
+            text-align: left;
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 2px solid #ddd;
+        }
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .order-summary th, .order-summary td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .order-summary th {
+            background: #f4f4f4;
+            text-align: left;
+        }
+        .footer {
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 0 0 5px 5px;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Obrigado pela sua compra!</h1>
+        </div>
+
+        <div class="content">
+            <h2>Olá, [Nome do Cliente]!</h2>
+            <p>Recebemos seu pedido e ele está sendo processado. Aqui estão os detalhes da sua compra:</p>
+            
+            <div class="order-summary">
+                <h3>Resumo do Pedido</h3>
+                <table>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                    </tr>
+                    <tr>
+                        <td>Produto Exemplo 1</td>
+                        <td>1</td>
+                        <td>R$ 99,90</td>
+                    </tr>
+                    <tr>
+                        <td>Produto Exemplo 2</td>
+                        <td>2</td>
+                        <td>R$ 49,90</td>
+                    </tr>
+                </table>
+                <p><strong>Total: R$ 199,70</strong></p>
+            </div>
+
+            <p>Você pode acompanhar o status do seu pedido clicando no botão abaixo:</p>
+            <a href="#" class="btn">Acompanhar Pedido</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Nome da Loja. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
