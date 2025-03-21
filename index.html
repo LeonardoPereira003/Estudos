@@ -1,35 +1,124 @@
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festa Futurista 2025</title>
-    <link rel="stylesheet" href="./main.css">
-</head>
-<body>
-    <header>
-        <h1>🚀 Festa Futurista 2025 🚀</h1>
-        <p>Venha comemorar o evento mais tecnológico do ano!</p>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Festa de Aniversário</title>
+    <!-- Importa o arquivo de estilos -->
+    <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+        <!-- Logo com imagem placeholder -->
+        <img
+            src="https://picsum.photos/120/120?random=999" 
+            alt="Logo do Evento" 
+            class="logo"
+        />
+        
+        <!-- Título principal -->
+        <h1>O Maior Aniversário do Ano!</h1>
+        
+        <!-- Contagem regressiva -->
+        <h2 id="countdown">Faltam --d --h --m --s</h2>
+        
+        <!-- Informações principais do evento -->
+        <div class="event-details">
+            <div>
+            <span>Localização</span>
+            <p>Minha Casa, São Paulo - SP</p>
+            </div>
+            <div>
+            <span>Preço</span>
+            <p>Entrada Gratuita</p>
+            </div>
+            <div>
+            <span>Quando</span>
+            <!-- Substitua esta data pela sua real -->
+            <p>15 de Julho de 2026</p>
+            </div>
+        </div>
+        
+        <!-- Botão de call-to-action -->
+        <button class="cta-button">Garanta sua presença</button>
+        </div>
     </header>
 
-    <section class="countdown">
-        <h2>Tempo restante para o evento:</h2>
-        <div id="timer">00d 00h 00m 00s</div>
-    </section>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+        <!-- Seção 1 -->
+        <section class="content-section">
+        <h2>Programação</h2>
+        <div class="content-row">
+            <!-- Imagem placeholder (400x250) -->
+            <img src="https://picsum.photos/400/250?random=1" alt="Programação" />
+            <p>
+            Aqui você pode detalhar a programação da festa: horário de início, 
+            atrações, brincadeiras, horário do bolo, etc.
+            </p>
+        </div>
+        </section>
 
-    <section class="info">
-        <h2>Detalhes do Evento</h2>
-        <p><strong>📅 Data:</strong> 21 de Outubro de 2025</p>
-        <p><strong>📍 Local:</strong> Cyber Arena - Setor 21</p>
-        <p><strong>💰 Entrada:</strong> R$ 50,00</p>
-        <button onclick="garantirIngresso()">Garanta seu ingresso</button>
-    </section>
+        <!-- Seção 2 -->
+        <section class="content-section">
+        <h2>Convidados Especiais</h2>
+        <div class="content-row">
+            <img src="https://picsum.photos/400/250?random=2" alt="Convidados" />
+            <p>
+            Você pode listar alguns convidados de honra ou destacar quem estará presente.
+            Aproveite para descrever como será a confraternização com todos.
+            </p>
+        </div>
+        </section>
 
+        <!-- Seção 3 -->
+        <section class="content-section">
+        <h2>Atividades</h2>
+        <div class="content-row">
+            <img src="https://picsum.photos/400/250?random=3" alt="Atividades" />
+            <p>
+            Liste as principais atividades planejadas:
+            jogos, karaokê, sorteios, etc. Use sua criatividade!
+            </p>
+        </div>
+        </section>
+
+        <!-- Seção 4 -->
+        <section class="content-section">
+        <h2>Presentes & Lembranças</h2>
+        <div class="content-row">
+            <img src="https://picsum.photos/400/250?random=4" alt="Presentes" />
+            <p>
+            Se quiser, pode deixar sugestões de presentes ou avisar que 
+            é só a presença que conta. Compartilhe como serão as lembrancinhas.
+            </p>
+        </div>
+        </section>
+        
+        <!-- Seção extra de RSVP (opcional) -->
+        <section class="rsvp-section">
+        <h2>Confirme sua Presença</h2>
+        <form>
+            <label for="name">Nome</label>
+            <input type="text" id="name" required />
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" required />
+
+            <button type="submit">Enviar</button>
+        </form>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
     <footer>
-        <p>&copy; 2025 Festa Futurista - Todos os direitos reservados.</p>
+        <p>Feito com &hearts; - Contato: (xx) xxxxx-xxxx</p>
+        <!-- Links de redes sociais podem ir aqui -->
     </footer>
 
-    <script src="./main.js></script>
-</body>
-</html>
+    <!-- Importa o arquivo JavaScript -->
+    <script src="main.js"></script>
+    </body>
+    </html>

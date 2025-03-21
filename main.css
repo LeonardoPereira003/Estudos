@@ -1,67 +1,173 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-header {
-    margin-top: 20px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 1.2rem;
-}
-
-.countdown {
-    margin: 30px 0;
-    font-size: 1.5rem;
-}
-
-#timer {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #00ffcc;
-}
-
-.info {
-    margin: 40px 0;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background: #ff0099;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #ff66cc;
-}
-
-footer {
-    margin-top: 30px;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
+    /* RESET BÁSICO */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* ESTILOS GERAIS DO BODY */
+    body {
+        font-family: Arial, sans-serif;
+        color: #fff;
+        background-color: #000; /* Caso queira, troque a cor de fundo geral */
+    }
+    
+    /* HERO SECTION (TOPO) */
+    .hero {
+        background-color: #000; /* Fundo preto */
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .logo {
+        max-width: 120px;
+        margin-bottom: 1rem;
+    }
+    
+    /* Título principal */
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Contagem regressiva */
+    #countdown {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Caixa com detalhes do evento */
+    .event-details {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+    }
+    
+    .event-details div {
+        margin: 0.5rem;
+        text-align: left;
+    }
+    
+    .event-details span {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+    }
+    
+    /* Botão de CTA (call-to-action) */
+    .cta-button {
+        background-color: #ffbf00;
+        color: #000;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    /* ÁREA PRINCIPAL COM GRADIENTE DE FUNDO */
+    main {
+        /* Gradiente vertical (topo roxo para base azul-claro) */
+        background: linear-gradient(to bottom, #3f2b96, #a8c0ff);
+        padding: 2rem 0;
+    }
+    
+    /* Seção de conteúdo (cartões) */
+    .content-section {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: rgba(255, 255, 255, 0.1); /* Leve transparência */
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .content-section h2 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .content-row {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin: 1rem 0;
+    }
+    
+    .content-row img {
+        max-width: 200px;
+        border-radius: 8px;
+    }
+    
+    .content-row p {
+        flex: 1;
+        color: #fff; /* Garante contraste sobre o fundo */
+    }
+    
+    /* Seção de RSVP (opcional) */
+    .rsvp-section {
+        max-width: 800px;
+        margin: 2rem auto;
+        text-align: center;
+    }
+    
+    .rsvp-section form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .rsvp-section form label {
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+    
+    .rsvp-section form input {
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: none;
+        margin-top: 0.5rem;
+        width: 200px;
+    }
+    
+    .rsvp-section form button {
+        margin-top: 1rem;
+        padding: 0.8rem 1.5rem;
+        background-color: #ffbf00;
+        color: #000;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    /* RODAPÉ */
+    footer {
+        background-color: #000;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+        /* Ajuste de layout em telas menores */
+        .event-details {
+        flex-direction: column;
+        align-items: center;
+        }
+    
+        .content-row {
+        flex-direction: column;
+        text-align: center;
+        }
+    
+        .content-row img {
+        margin-bottom: 1rem;
+        }
+    }
+    
