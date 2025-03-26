@@ -1,124 +1,76 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Festa de Aniversário</title>
-    <!-- Importa o arquivo de estilos -->
-    <link rel="stylesheet" href="main.css" />
-    </head>
-    <body>
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <div class="hero-content">
-        <!-- Logo com imagem placeholder -->
-        <img
-            src="https://picsum.photos/120/120?random=999" 
-            alt="Logo do Evento" 
-            class="logo"
-        />
-        
-        <!-- Título principal -->
-        <h1>O Maior Aniversário do Ano!</h1>
-        
-        <!-- Contagem regressiva -->
-        <h2 id="countdown">Faltam --d --h --m --s</h2>
-        
-        <!-- Informações principais do evento -->
-        <div class="event-details">
-            <div>
-            <span>Localização</span>
-            <p>Minha Casa, São Paulo - SP</p>
-            </div>
-            <div>
-            <span>Preço</span>
-            <p>Entrada Gratuita</p>
-            </div>
-            <div>
-            <span>Quando</span>
-            <!-- Substitua esta data pela sua real -->
-            <p>15 de Julho de 2026</p>
-            </div>
-        </div>
-        
-        <!-- Botão de call-to-action -->
-        <button class="cta-button">Garanta sua presença</button>
+<!DOCTYPE html> 
+<!-- Define que este é um documento HTML5 -->
+
+<html lang="pt-br"> 
+<!-- Início do documento HTML, com idioma definido como português do Brasil -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 (aceita acentos e caracteres especiais) -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Garante compatibilidade com versões antigas do Internet Explorer -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Faz o layout se adaptar a diferentes tamanhos de tela (responsivo) -->
+
+    <title>Meu Github</title>
+    <!-- Título da aba do navegador -->
+
+    <link rel="stylesheet" href="main.css">
+    <!-- Linka o arquivo CSS externo chamado "main.css" -->
+</head>
+
+<body>
+    <!-- Corpo visível da página -->
+
+    <header>
+        <!-- Cabeçalho da página -->
+
+        <div class="container">
+        <!-- Container centralizado para agrupar os elementos do perfil -->
+
+            <img id="avatar" class="profile-avatar" src="https://dummyimage.com/180x180/222/fff&text=Avatar" alt="avatar">
+            <!-- Imagem de avatar do usuário (padrão), com ID e classe para estilização e manipulação via JS -->
+
+            <h1 id="name" class="profile-name">Leonardo Pereira</h1>
+            <!-- Nome do usuário, com ID e classe -->
+
+            <h2 id="username" class="profile-username">@LeonardoPereira003</h2>
+            <!-- Nome de usuário do GitHub, também com ID para ser atualizado dinamicamente -->
+
+            <ul class="numbers">
+            <!-- Lista com os números do perfil: repositórios, seguidores e seguindo -->
+
+                <li class="numbers-item">
+                    <!-- Item da lista: Repositórios -->
+                    <h4>Repositórios</h4>
+                    <span id="repos">5</span>
+                    <!-- Número de repositórios, com ID para alterar via JavaScript -->
+                </li>
+
+                <li class="numbers-item">
+                    <!-- Item da lista: Seguidores -->
+                    <h4>Seguidores</h4>
+                    <span id="followers">5</span>
+                    <!-- Número de seguidores, com ID para alterar via JavaScript -->
+                </li>
+
+                <li class="numbers-item">
+                    <!-- Item da lista: Seguindo -->
+                    <h4>Seguindo</h4>
+                    <span id="following">5</span>
+                    <!-- Número de pessoas que o usuário está seguindo, com ID para alteração dinâmica -->
+                </li>
+            </ul>
+
+            <a id="link" href="#" class="profile-link">Ver no Github</a>
+            <!-- Link para o perfil no GitHub (href será atualizado via JavaScript) -->
+
         </div>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main>
-        <!-- Seção 1 -->
-        <section class="content-section">
-        <h2>Programação</h2>
-        <div class="content-row">
-            <!-- Imagem placeholder (400x250) -->
-            <img src="https://picsum.photos/400/250?random=1" alt="Programação" />
-            <p>
-            Aqui você pode detalhar a programação da festa: horário de início, 
-            atrações, brincadeiras, horário do bolo, etc.
-            </p>
-        </div>
-        </section>
-
-        <!-- Seção 2 -->
-        <section class="content-section">
-        <h2>Convidados Especiais</h2>
-        <div class="content-row">
-            <img src="https://picsum.photos/400/250?random=2" alt="Convidados" />
-            <p>
-            Você pode listar alguns convidados de honra ou destacar quem estará presente.
-            Aproveite para descrever como será a confraternização com todos.
-            </p>
-        </div>
-        </section>
-
-        <!-- Seção 3 -->
-        <section class="content-section">
-        <h2>Atividades</h2>
-        <div class="content-row">
-            <img src="https://picsum.photos/400/250?random=3" alt="Atividades" />
-            <p>
-            Liste as principais atividades planejadas:
-            jogos, karaokê, sorteios, etc. Use sua criatividade!
-            </p>
-        </div>
-        </section>
-
-        <!-- Seção 4 -->
-        <section class="content-section">
-        <h2>Presentes & Lembranças</h2>
-        <div class="content-row">
-            <img src="https://picsum.photos/400/250?random=4" alt="Presentes" />
-            <p>
-            Se quiser, pode deixar sugestões de presentes ou avisar que 
-            é só a presença que conta. Compartilhe como serão as lembrancinhas.
-            </p>
-        </div>
-        </section>
-        
-        <!-- Seção extra de RSVP (opcional) -->
-        <section class="rsvp-section">
-        <h2>Confirme sua Presença</h2>
-        <form>
-            <label for="name">Nome</label>
-            <input type="text" id="name" required />
-
-            <label for="email">E-mail</label>
-            <input type="email" id="email" required />
-
-            <button type="submit">Enviar</button>
-        </form>
-        </section>
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer>
-        <p>Feito com &hearts; - Contato: (xx) xxxxx-xxxx</p>
-        <!-- Links de redes sociais podem ir aqui -->
-    </footer>
-
-    <!-- Importa o arquivo JavaScript -->
-    <script src="main.js"></script>
-    </body>
-    </html>
+    <script src="script.js"></script>
+    <!-- Importa o arquivo JavaScript externo que vai preencher os dados via AJAX -->
+</body>
+</html>

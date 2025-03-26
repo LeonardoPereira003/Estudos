@@ -1,173 +1,73 @@
-    /* RESET BÁSICO */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    /* ESTILOS GERAIS DO BODY */
-    body {
-        font-family: Arial, sans-serif;
-        color: #fff;
-        background-color: #000; /* Caso queira, troque a cor de fundo geral */
-    }
-    
-    /* HERO SECTION (TOPO) */
-    .hero {
-        background-color: #000; /* Fundo preto */
-        padding: 2rem;
-        text-align: center;
-    }
-    
-    .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    
-    .logo {
-        max-width: 120px;
-        margin-bottom: 1rem;
-    }
-    
-    /* Título principal */
-    .hero h1 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-    
-    /* Contagem regressiva */
-    #countdown {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    /* Caixa com detalhes do evento */
-    .event-details {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
-    }
-    
-    .event-details div {
-        margin: 0.5rem;
-        text-align: left;
-    }
-    
-    .event-details span {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 0.3rem;
-    }
-    
-    /* Botão de CTA (call-to-action) */
-    .cta-button {
-        background-color: #ffbf00;
-        color: #000;
-        padding: 0.8rem 1.5rem;
-        border: none;
-        border-radius: 4px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    
-    /* ÁREA PRINCIPAL COM GRADIENTE DE FUNDO */
-    main {
-        /* Gradiente vertical (topo roxo para base azul-claro) */
-        background: linear-gradient(to bottom, #3f2b96, #a8c0ff);
-        padding: 2rem 0;
-    }
-    
-    /* Seção de conteúdo (cartões) */
-    .content-section {
-        max-width: 800px;
-        margin: 2rem auto;
-        background: rgba(255, 255, 255, 0.1); /* Leve transparência */
-        padding: 1rem;
-        border-radius: 8px;
-    }
-    
-    .content-section h2 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-    
-    .content-row {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        margin: 1rem 0;
-    }
-    
-    .content-row img {
-        max-width: 200px;
-        border-radius: 8px;
-    }
-    
-    .content-row p {
-        flex: 1;
-        color: #fff; /* Garante contraste sobre o fundo */
-    }
-    
-    /* Seção de RSVP (opcional) */
-    .rsvp-section {
-        max-width: 800px;
-        margin: 2rem auto;
-        text-align: center;
-    }
-    
-    .rsvp-section form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .rsvp-section form label {
-        margin-top: 1rem;
-        font-weight: bold;
-    }
-    
-    .rsvp-section form input {
-        padding: 0.5rem;
-        border-radius: 4px;
-        border: none;
-        margin-top: 0.5rem;
-        width: 200px;
-    }
-    
-    .rsvp-section form button {
-        margin-top: 1rem;
-        padding: 0.8rem 1.5rem;
-        background-color: #ffbf00;
-        color: #000;
-        border: none;
-        border-radius: 4px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    
-    /* RODAPÉ */
-    footer {
-        background-color: #000;
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    /* RESPONSIVIDADE */
-    @media (max-width: 768px) {
-        /* Ajuste de layout em telas menores */
-        .event-details {
-        flex-direction: column;
-        align-items: center;
-        }
-    
-        .content-row {
-        flex-direction: column;
-        text-align: center;
-        }
-    
-        .content-row img {
-        margin-bottom: 1rem;
-        }
-    }
-    
+:root {
+    --header-color:#c1121f;     /* Define uma variável para cor do cabeçalho (vermelho escuro) */
+    --bg-color: #000000;        /* Define uma variável para cor de fundo (preto) */
+}
+
+* {
+    font-family: sans-serif;    /* Define fonte padrão para todos os elementos */
+    margin: 0;                  /* Remove margens padrão */
+    padding: 0;                 /* Remove preenchimento padrão */
+    box-sizing: border-box;     /* Inclui borda e padding dentro da largura/altura dos elementos */
+    list-style-type: none;      /* Remove marcadores de listas */
+}
+
+body {
+    color: #FFF;                /* Define cor do texto como branco */
+    background: var(--bg-color); /* Usa a variável de fundo (preto) para o background da página */
+}
+
+.container {
+    max-width: 640px;           /* Largura máxima do conteúdo */
+    width: 100%;                /* Ocupa toda a largura disponível até o máximo */
+    margin: 0 auto;             /* Centraliza horizontalmente */
+}
+
+header {
+    background-color: var(--header-color); /* Define fundo do cabeçalho com a cor vermelha */
+    text-align: center;         /* Centraliza todo o conteúdo do header */
+    height: 30vh;               /* Altura do header baseada em 30% da altura da janela */
+}
+
+header .container {
+    position: relative;         /* Permite mover o container com bottom */
+    bottom: -50%;               /* Move o container 50% para baixo dentro do header */
+}
+
+.profile-avatar {
+    border-radius: 50%;         /* Deixa a imagem completamente redonda */
+    margin-bottom: 24px;        /* Espaço inferior abaixo da imagem */
+    width: 180px;               /* Largura fixa */
+    height: 180px;              /* Altura fixa */
+}
+
+.profile-name {
+    font-size: 2em;             /* Aumenta o tamanho da fonte do nome */
+}
+
+.profile-username {
+    margin: 16px 0 32px;        /* Espaçamento superior: 16px, inferior: 32px */
+    font-size: 1.1em;           /* Um pouco maior que o padrão */
+}
+
+.profile-link {
+    background-color: var(--header-color); /* Cor de fundo igual ao header */
+    color: var(--bg-color);                /* Cor do texto preta */
+    padding: 8px 16px;                     /* Espaçamento interno do botão */
+    display: inline-block;                 /* Deixa o link se comportar como bloco inline */
+    margin-top: 24px;                      /* Espaço acima do botão */
+    text-decoration: none;                 /* Remove sublinhado do link */
+}
+
+.numbers {
+    display: grid;                         /* Usa grid layout */
+    grid-template-columns: 1fr 1fr 1fr;    /* Divide em 3 colunas iguais */
+}
+
+.numbers-item {
+    font-size: 3em;                        /* Fonte grande para os números */
+    font-weight: bold;                     /* Deixa os números em negrito */
+}
+
+.numbers-item h4 {
+    font-size: .3em;                       /* Título dos números bem pequeno */
+}
