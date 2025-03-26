@@ -1,0 +1,72 @@
+    :root {
+        --bg-color: #0f0f0f;
+        --text-color: #f5f5f5;
+        --accent-color: #c1121f;
+        --box-color: #1a1a1a;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    .container {
+        max-width: 700px;
+        width: 100%;
+        background-color: var(--box-color);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px #000;
+        text-align: center;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        color: var(--accent-color);
+    }
+    
+    .descricao {
+        text-align: left;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-size: 0.95em;
+    }
+    
+    .output-area {
+        background-color: #111;
+        border: 1px solid var(--accent-color);
+        padding: 20px;
+        border-radius: 8px;
+        min-height: 150px;
+        text-align: left;
+        font-family: monospace;
+        margin-bottom: 20px;
+    }
+    
+    button {
+        background-color: var(--accent-color);
+        color: var(--text-color);
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+    }
+    
+    button:hover {
+        background-color: #a20e1a;
+    }
+    

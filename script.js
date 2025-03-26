@@ -1,48 +1,65 @@
-    // Função assíncrona para buscar e exibir os dados do perfil do GitHub
-    async function carregarPerfil() {
-        // Nome de usuário do GitHub que vamos buscar
-        const username = 'LeonardoPereira003';
+    document.getElementById("executar").addEventListener("click", function () {
+        // Classe base (abstração)
+        function Impressora(marca, modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
     
-        try {
-        // Faz a requisição para a API pública do GitHub usando fetch
-        const resposta = await fetch(`https://api.github.com/users/${username}`);
-    
-        // Verifica se a resposta deu erro (status diferente de 200~299)
-        if (!resposta.ok) throw new Error('Erro ao buscar usuário');
-    
-        // Converte o resultado da requisição em JSON (dados legíveis no JS)
-        const perfil = await resposta.json();
-    
-        // Atualiza a imagem de avatar no HTML usando o valor da API
-        document.getElementById('avatar').src = perfil.avatar_url;
-    
-        // Atualiza o nome do usuário (pode ser nome real)
-        document.getElementById('name').textContent = perfil.name;
-    
-        // Atualiza o login do GitHub (com @ na frente)
-        document.getElementById('username').textContent = '@' + perfil.login;
-    
-        // Atualiza o número de repositórios públicos
-        document.getElementById('repos').textContent = perfil.public_repos;
-    
-        // Atualiza o número de seguidores
-        document.getElementById('followers').textContent = perfil.followers;
-    
-        // Atualiza o número de pessoas que ele segue
-        document.getElementById('following').textContent = perfil.following;
-    
-        // Atualiza o link para o perfil do GitHub
-        document.getElementById('link').href = perfil.html_url;
-    
-        } catch (erro) {
-        // Se algum erro acontecer (ex: rede, usuário inválido...), ele cai aqui
-        console.error('Erro ao carregar perfil:', erro);
-    
-        // Mostra uma mensagem para o usuário (pode customizar)
-        alert('Não foi possível carregar os dados do GitHub.');
+        this.imprimir = function (texto) {
+            return `Imprimindo "${texto}" com ${this.marca} ${this.modelo}`;
+        };
         }
-    }
     
-    // Chama a função quando a página carregar
-    carregarPerfil();
+        // Herdeira: Impressora Laser
+        function ImpressoraLaser(marca, modelo) {
+        Impressora.call(this, marca, modelo);
+        this.tipo = function () {
+            return "Impressora a Laser";
+        };
+        }
+    
+        // Herdeira: Impressora Jato de Tinta
+        function ImpressoraJatoDeTinta(marca, modelo) {
+        Impressora.call(this, marca, modelo);
+        this.tipo = function () {
+            return "Impressora a Jato de Tinta";
+        };
+        }
+    
+        // Instâncias
+        const hp = new ImpressoraLaser("HP", "LaserJet 123");
+        const epson = new ImpressoraJatoDeTinta("Epson", "EcoTank 3150");
+        const canon = new Impressora("Canon", "Pixma 3610");
+    
+        // Verificando propriedades com 'in'
+        const propriedades = ["marca", "modelo", "cor", "toString"];
+        let checagem = `
+        📦 <strong>Verificando propriedades com 'in'</strong>:<br><br>
+        <table style="font-family: monospace; line-height: 1.6;">
+        <tbody>
+        `;
+    
+        propriedades.forEach(prop => {
+        const existe = prop in hp;
+        checagem += `
+            <tr>
+            <td>• ${prop}</td>
+            <td style="padding: 0 10px;">➡️</td>
+            <td style="color: ${existe ? '#00ff88' : '#ff4444'};">
+                ${existe ? '✅ sim' : '❌ não'}
+            </td>
+            </tr>
+        `;
+        });
+    
+        checagem += "</tbody></table>";
+    
+        // Exibir resultado
+        const output = document.getElementById("output");
+        output.innerHTML = `
+        ${hp.tipo()} - ${hp.imprimir("Contrato de aluguel")}<br><br>
+        ${epson.tipo()} - ${epson.imprimir("Foto colorida")}<br><br>
+        Impressora Genérica - ${canon.imprimir("Texto simples")}<br><br>
+        ${checagem}
+        `;
+    });
     

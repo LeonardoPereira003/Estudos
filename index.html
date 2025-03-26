@@ -1,76 +1,41 @@
-<!DOCTYPE html> 
-<!-- Define que este é um documento HTML5 -->
-
-<html lang="pt-br"> 
-<!-- Início do documento HTML, com idioma definido como português do Brasil -->
-
-<head>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
     <meta charset="UTF-8">
-    <!-- Define a codificação de caracteres como UTF-8 (aceita acentos e caracteres especiais) -->
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Garante compatibilidade com versões antigas do Internet Explorer -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Faz o layout se adaptar a diferentes tamanhos de tela (responsivo) -->
+    <title>Exercício OO em JS</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <!-- Container principal para o conteúdo -->
+    <main class="container">
+        <h1>Exercício de Orientação a Objetos em JavaScript</h1>
 
-    <title>Meu Github</title>
-    <!-- Título da aba do navegador -->
-
-    <link rel="stylesheet" href="main.css">
-    <!-- Linka o arquivo CSS externo chamado "main.css" -->
-</head>
-
-<body>
-    <!-- Corpo visível da página -->
-
-    <header>
-        <!-- Cabeçalho da página -->
-
-        <div class="container">
-        <!-- Container centralizado para agrupar os elementos do perfil -->
-
-            <img id="avatar" class="profile-avatar" src="https://dummyimage.com/180x180/222/fff&text=Avatar" alt="avatar">
-            <!-- Imagem de avatar do usuário (padrão), com ID e classe para estilização e manipulação via JS -->
-
-            <h1 id="name" class="profile-name">Leonardo Pereira</h1>
-            <!-- Nome do usuário, com ID e classe -->
-
-            <h2 id="username" class="profile-username">@LeonardoPereira003</h2>
-            <!-- Nome de usuário do GitHub, também com ID para ser atualizado dinamicamente -->
-
-            <ul class="numbers">
-            <!-- Lista com os números do perfil: repositórios, seguidores e seguindo -->
-
-                <li class="numbers-item">
-                    <!-- Item da lista: Repositórios -->
-                    <h4>Repositórios</h4>
-                    <span id="repos">5</span>
-                    <!-- Número de repositórios, com ID para alterar via JavaScript -->
-                </li>
-
-                <li class="numbers-item">
-                    <!-- Item da lista: Seguidores -->
-                    <h4>Seguidores</h4>
-                    <span id="followers">5</span>
-                    <!-- Número de seguidores, com ID para alterar via JavaScript -->
-                </li>
-
-                <li class="numbers-item">
-                    <!-- Item da lista: Seguindo -->
-                    <h4>Seguindo</h4>
-                    <span id="following">5</span>
-                    <!-- Número de pessoas que o usuário está seguindo, com ID para alteração dinâmica -->
-                </li>
+        <!-- Descrição da tarefa -->
+        <section class="descricao">
+        <p>
+            Neste exercício você deve:
+            <ul>
+            <li>✅ Criar uma <strong>classe de uma abstração</strong></li>
+            <li>✅ Criar pelo menos <strong>duas classes herdeiras</strong></li>
+            <li>✅ Criar <strong>três instâncias de objetos</strong></li>
+            <li>✅ Subir o código para uma <strong>branch chamada oo_js</strong> no GitHub</li>
             </ul>
+        </p>
+        </section>
 
-            <a id="link" href="#" class="profile-link">Ver no Github</a>
-            <!-- Link para o perfil no GitHub (href será atualizado via JavaScript) -->
+        <!-- Onde será exibido o resultado do JS -->
+        <section id="output" class="output-area">
+        <!-- JS vai inserir aqui os resultados -->
+        </section>
 
+        <!-- Botão de execução -->
+        <div class="actions">
+        <button id="executar">Executar Código</button>
         </div>
-    </header>
+    </main>
 
+    <!-- Link do seu JS -->
     <script src="script.js"></script>
-    <!-- Importa o arquivo JavaScript externo que vai preencher os dados via AJAX -->
-</body>
-</html>
+    </body>
+    </html>
