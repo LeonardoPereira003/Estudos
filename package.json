@@ -1,0 +1,26 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "browserslist": "> 0.25%",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoPereira003/Estudos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeonardoPereira003/Estudos/issues"
+  },
+  "homepage": "https://github.com/LeonardoPereira003/Estudos#readme",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.27.0",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9"
+  }
+}
