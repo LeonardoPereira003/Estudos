@@ -1,0 +1,35 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8" /> <!-- Define o charset como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Responsivo para mobile -->
+    <title>Exercício TypeScript</title>
+    <link rel="stylesheet" href="style.css" /> <!-- Importa o CSS -->
+    </head>
+    <body>
+    <div class="container">
+        <h1>Exercício em TypeScript</h1>
+        
+        <!-- Caixa de saudação -->
+        <div class="box">
+        <label>Nome:</label>
+        <input type="text" id="nomeInput" placeholder="Digite seu nome" />
+        <button onclick="mostrarSaudacao()">Saudar</button>
+        <p id="saudacaoResultado"></p> <!-- Onde vai aparecer o resultado da saudação -->
+        </div>
+
+        <!-- Caixa de multiplicação -->
+        <div class="box">
+        <label>Número 1:</label>
+        <input type="number" id="numero1" />
+        <label>Número 2:</label>
+        <input type="number" id="numero2" />
+        <button onclick="calcularMultiplicacao()">Multiplicar</button>
+        <p id="multiplicacaoResultado"></p> <!-- Resultado da multiplicação -->
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Arquivo JS gerado pelo TypeScript -->
+    </body>
+    </html>

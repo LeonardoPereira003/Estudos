@@ -1,0 +1,58 @@
+
+    /* Estilo base da página */
+    body {
+        font-family: Arial, sans-serif;
+        background: #111; /* fundo escuro */
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* ocupa toda a altura */
+        margin: 0;
+    }
+    
+    /* Caixa principal */
+    .container {
+        background-color: #222;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 0 15px #c1121f; /* brilho vermelho */
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    /* Título */
+    h1 {
+        text-align: center;
+        color: #c1121f;
+    }
+    
+    /* Box para os inputs e botões */
+    .box {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Campos de texto */
+    input {
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    /* Botão estilizado */
+    button {
+        background-color: #c1121f;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #a00f1c; /* efeito hover */
+    }
+    
