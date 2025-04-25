@@ -1,58 +1,35 @@
 
-    /* Estilo base da página */
     body {
+        background: #1a1a1a;
+        color: white;
         font-family: Arial, sans-serif;
-        background: #111; /* fundo escuro */
-        color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* ocupa toda a altura */
+        height: 100vh;
         margin: 0;
     }
     
-    /* Caixa principal */
-    .container {
-        background-color: #222;
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 0 15px #c1121f; /* brilho vermelho */
-        max-width: 400px;
-        width: 100%;
+    .calc {
+        background: #2c2c2c;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #c1121f;
+        width: 300px;
     }
     
-    /* Título */
-    h1 {
-        text-align: center;
-        color: #c1121f;
-    }
-    
-    /* Box para os inputs e botões */
-    .box {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    /* Campos de texto */
-    input {
-        padding: 8px;
-        border: none;
-        border-radius: 5px;
-    }
-    
-    /* Botão estilizado */
-    button {
-        background-color: #c1121f;
-        color: white;
-        border: none;
+    input, select {
         padding: 10px;
+        margin: 10px 0;
+        width: 100%;
+        font-size: 1.1em;
+        border: none;
         border-radius: 5px;
-        cursor: pointer;
     }
     
-    button:hover {
-        background-color: #a00f1c; /* efeito hover */
+    .resultado {
+        margin-top: 15px;
+        font-size: 1.4em;
+        color: #c1121f;
     }
     

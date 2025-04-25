@@ -1,35 +1,45 @@
-
     <!DOCTYPE html>
-    <html lang="pt-BR">
+    <html lang="pt-br">
     <head>
-    <meta charset="UTF-8" /> <!-- Define o charset como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Responsivo para mobile -->
-    <title>Exercício TypeScript</title>
-    <link rel="stylesheet" href="style.css" /> <!-- Importa o CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora VueJS</title>
+
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Importa Vue 3 via CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
-    <div class="container">
-        <h1>Exercício em TypeScript</h1>
-        
-        <!-- Caixa de saudação -->
-        <div class="box">
-        <label>Nome:</label>
-        <input type="text" id="nomeInput" placeholder="Digite seu nome" />
-        <button onclick="mostrarSaudacao()">Saudar</button>
-        <p id="saudacaoResultado"></p> <!-- Onde vai aparecer o resultado da saudação -->
-        </div>
+    <!-- Div que será controlada pelo Vue -->
+    <div id="app">
+        <div class="calc">
+        <h2>🧮 Calculadora VueJS</h2>
 
-        <!-- Caixa de multiplicação -->
-        <div class="box">
-        <label>Número 1:</label>
-        <input type="number" id="numero1" />
-        <label>Número 2:</label>
-        <input type="number" id="numero2" />
-        <button onclick="calcularMultiplicacao()">Multiplicar</button>
-        <p id="multiplicacaoResultado"></p> <!-- Resultado da multiplicação -->
+        <!-- Campo de input para o primeiro número -->
+        <input type="number" v-model.number="num1" placeholder="Digite o primeiro número" />
+
+        <!-- Campo de input para o segundo número -->
+        <input type="number" v-model.number="num2" placeholder="Digite o segundo número" />
+
+        <!-- Select para escolher a operação aritmética (com label para acessibilidade) -->
+        <label for="operacao">Escolha a operação:</label>
+        <select id="operacao" v-model="operacao">
+            <option value="+">Soma (+)</option>
+            <option value="-">Subtração (-)</option>
+            <option value="*">Multiplicação (*)</option>
+            <option value="/">Divisão (/)</option>
+        </select>
+
+        <!-- Exibição automática do resultado -->
+        <div class="resultado">
+            Resultado: {{ resultado }}
+        </div>
         </div>
     </div>
 
-    <script src="script.js"></script> <!-- Arquivo JS gerado pelo TypeScript -->
+    <!-- Script do VueJS com a lógica da calculadora -->
+    <script src="app.js"></script>
     </body>
     </html>
