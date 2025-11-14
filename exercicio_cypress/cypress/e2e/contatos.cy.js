@@ -1,49 +1,103 @@
-describe('Agenda - CRUD de contatos', () => {
+describe('Agenda - CRUD de contatos (final)', () => {
   const baseUrl = 'https://ebac-agenda-contatos-tan.vercel.app/';
 
   beforeEach(() => {
     cy.visit(baseUrl);
   });
 
+  // Helpers
+  const fillTopForm = ({ nome, email, telefone }) => {
+    cy.get('input[placeholder*="Nome"], input[placeholder*="nome"], input[name="nome"], input[name="name"]', { timeout: 6000 })
+      .first().clear({ force: true }).type(nome, { force: true });
+    cy.get('input[placeholder*="E-mail"], input[placeholder*="email"], input[type="email"], input[name="email"]', { timeout: 6000 })
+      .first().clear({ force: true }).type(email, { force: true });
+    cy.get('input[placeholder*="Telefone"], input[placeholder*="telefone"], input[type="tel"], input[name="telefone"], input[name="phone"]', { timeout: 6000 })
+      .first().clear({ force: true }).type(telefone, { force: true });
+  };
+
+  const clickAdd = () => {
+    cy.contains('button', /ADICIONAR|Adicionar|Adicionar contato|Add/i, { matchCase: false, timeout: 5000 })
+      .first().click({ force: true });
+  };
+
+  const findAncestorWithButtons = ($el) => {
+    // retorna o ancestor DOM node que contenha button(s) (procura até 6 níveis)
+    let card = $el[0];
+    for (let i = 0; i < 6 && card; i++) {
+      if (card.querySelector && card.querySelector('button')) break;
+      card = card.parentElement;
+    }
+    if (!card) card = $el[0].parentElement;
+    return card;
+  };
+
   it('inclui um novo contato', () => {
-    // abrir formulário — tenta por texto 'Novo', 'Adicionar' ou botão de '+'
-    cy.contains(/novo contato|adicionar contato|criar contato|\+|add contact/i).click({ force: true });
+    const novo = { nome: 'Teste Nome', email: 'teste+ci@exemplo.com', telefone: '11999999999' };
 
-    // preencher campos: o seletor usa vários nomes possíveis, ajusta se necessário
-    cy.get('input[name="nome"], input[name="name"], input[id="name"], input[placeholder*="Nome"]').type('Teste Nome');
-    cy.get('input[name="email"], input[id="email"], input[placeholder*="email"]').type('teste+ci@exemplo.com');
-    cy.get('input[name="telefone"], input[name="phone"], input[id="phone"], input[placeholder*="telefone"]').type('11999999999');
+    cy.log('Preencher o formulário no topo');
+    fillTopForm(novo);
 
-    // submeter
-    cy.get('button[type="submit"], button:contains("Salvar"), button:contains("Adicionar")').click({ force: true });
+    cy.log('Clicar em ADICIONAR');
+    clickAdd();
 
-    // asserções
-    cy.contains('Teste Nome').should('exist');
-    cy.contains('teste+ci@exemplo.com').should('exist');
+    cy.log('Validar inclusão');
+    cy.contains(novo.nome, { timeout: 8000 }).should('exist');
+    cy.contains(novo.email, { timeout: 8000 }).should('exist');
   });
 
   it('altera um contato existente', () => {
-    // encontra o contato e clica em editar — ajusta se o botão de editar for ícone
-    cy.contains('Teste Nome').parent().within(() => {
-      cy.contains(/editar|alterar|edit/i).click({ force: true });
+    const original = 'Teste Nome';
+    const novoNome = 'Teste Nome Alterado';
+
+    cy.log('Procurar contato e clicar em EDITAR dentro do mesmo card');
+    cy.contains(original, { timeout: 8000 }).should('exist').then($el => {
+      const card = findAncestorWithButtons($el);
+      cy.wrap(card).find('button').then($btns => {
+        const editBtn = Array.from($btns).find(b => /EDITAR|Editar|editar|EDIT/i.test(b.innerText));
+        if (editBtn) {
+          cy.wrap(editBtn).click({ force: true });
+        } else {
+          // tentar por title/aria-label ou ícone
+          cy.wrap(card).find('[title*="editar"], [aria-label*="editar"], [data-test*="edit"]').first().click({ force: true });
+        }
+      });
     });
 
-    // altera nome e salva
-    cy.get('input[name="nome"], input[name="name"], input[id="name"]').clear().type('Teste Nome Alterado');
-    cy.get('button[type="submit"], button:contains("Salvar")').click({ force: true });
+    cy.log('Alterar o campo Nome no formulário (topo ou modal)');
+    cy.get('input[placeholder*="Nome"], input[name="nome"], input[name="name"], input[id="name"]', { timeout: 8000 })
+      .first().clear({ force: true }).type(novoNome, { force: true });
 
-    cy.contains('Teste Nome Alterado').should('exist');
+    cy.log('Salvar alteração (vários textos possíveis)');
+    cy.get('button', { timeout: 6000 }).then($btns => {
+      const save = Array.from($btns).find(b => /salvar|atualizar|confirmar|save|ok|concluir|atualizar contato/i.test(b.innerText));
+      if (save) cy.wrap(save).click({ force: true });
+      else clickAdd();
+    });
+
+    cy.log('Validar alteração');
+    cy.contains(novoNome, { timeout: 8000 }).should('exist');
   });
 
   it('remove um contato', () => {
-    // encontra o contato alterado e clica em remover/excluir
-    cy.contains('Teste Nome Alterado').parent().within(() => {
-      cy.contains(/remover|excluir|delete/i).click({ force: true });
+    const nomeRemover = 'Teste Nome Alterado';
+
+    cy.log('Procurar o contato para remover e clicar em DELETAR dentro do mesmo card');
+    cy.contains(nomeRemover, { timeout: 8000 }).should('exist').then($el => {
+      const card = findAncestorWithButtons($el);
+      cy.wrap(card).find('button').then($btns => {
+        const delBtn = Array.from($btns).find(b => /DELETAR|Deletar|Excluir|Remover|apagar|DELETE/i.test(b.innerText));
+        if (delBtn) {
+          cy.wrap(delBtn).click({ force: true });
+        } else {
+          cy.wrap(card).find('[title*="excluir"], [aria-label*="excluir"], [data-test*="delete"]').first().click({ force: true });
+        }
+      });
     });
 
-    // se a app pedir confirmação, confirmar (descomente se precisar)
-    // cy.on('window:confirm', () => true);
+    cy.log('Confirmar diálogo se necessário');
+    cy.on('window:confirm', () => true);
 
-    cy.contains('Teste Nome Alterado').should('not.exist');
+    cy.log('Validar remoção');
+    cy.contains(nomeRemover, { timeout: 8000 }).should('not.exist');
   });
 });
